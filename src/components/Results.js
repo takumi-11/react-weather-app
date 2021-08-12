@@ -1,24 +1,26 @@
 import "../App.css"
 
 const Results = ({ results }) => {
+    const { cityName, country, temperature, conditionText, icon } = results
+
     return (
-        <div>
-            {results.cityName &&
+        <>
+            {cityName &&
                 <div className="result-city">{results.cityName}</div> 
             }
-            {results.country && 
+            {country && 
                 <div className="results-country">{results.country}</div> 
             }
-            {results.temperature && 
+            {temperature && 
                 <div className="results-temp">{results.temperature} <span>℃</span></div> 
             }
-            {results.conditionText && 
+            {conditionText && 
                 <div className="results-condition">
-                    <img src={results.icon} alt="icon" />
-                    <span>{results.conditionText}</span>
+                    <img src={icon} alt="icon" />
+                    <span>{conditionText}</span>
                 </div> 
             }
-        </div>
+        </>
     )
 }
 
